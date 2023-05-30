@@ -7,15 +7,14 @@
   <div class="card">
     <h3 class="center-text">Add pictures of your item</h3>
     <p class="center-text">We recommend capturing the item only in a flat-lay position, taken from directly above the item.</p>
-    <! -- add photo functionality -->
-    <div class="container p-10 m-2">
-      <div class="icon"></div>
-      <span>Container with Icon</span>
+<! -- add photo functionality -->
+    <div id="camera">
+      <%= image_tag("camera.png") %>
     </div>
   </div>
 
   <div class="card">
-    <h3 class="center-text">Add pictures of your item</h3>
+    <h3 class="center-text">Add product details</h3>
       <%= simple_form_for(@item) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
@@ -24,11 +23,11 @@
         <%= f.input :size %>
         <%= f.input :original_price %>
         <%= f.input :price %>
-        <%= f.submit %>
+        <%= f.button :submit, 'Save', class: 'yellow-button' %>
       <% end %>
    </div>
 </div>
 
-<div>
-  
+<div class="bottom_bar">
+
 </div>
