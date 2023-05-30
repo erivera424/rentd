@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  align-self: end;
+}
