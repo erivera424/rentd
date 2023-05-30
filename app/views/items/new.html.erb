@@ -1,25 +1,29 @@
+<div class="top-bar">
+  <h1 class="center-text">List an item for rent</h1>
+</div>
+
 <div class="container p-2 m-10">
 
-  <div>
-    <h1 class="center_text">List an item for rent</h1>
-  </div>
-
-  <div>
+  <div class="card">
     <h3 class="center_text">Add pictures of your item</h3>
     <p>We recommend capturing the item only in a flat-lay position, taken from directly above the item.</p>
     <! -- add photo functionality -->
+    <div class="container p-10 m-2">
+      <div class="icon"></div>
+      <span>Container with Icon</span>
+    </div>
   </div>
 
-  <div>
+  <div class="card">
     <h3 class="center_text">Add pictures of your item</h3>
       <%= simple_form_for(@item) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
-        <%= f.input :price %>
         <%= f.input :brand %>
         <%= f.input :fabric_details %>
-        <%= f.input :original_price %>
         <%= f.input :size %>
+        <%= f.input :original_price %>
+        <%= f.input :price %>
         <%= f.submit %>
       <% end %>
    </div>
