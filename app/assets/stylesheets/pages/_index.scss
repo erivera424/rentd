@@ -1,4 +1,9 @@
 .banner-container {
+// Import page-specific CSS files here.
+@import "home";
+@import "show";
+
+.banner {
   background-color: #F6A785;
   padding: 20px;
   padding-bottom: 40px;
