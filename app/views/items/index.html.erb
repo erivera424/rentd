@@ -1,0 +1,27 @@
+<div class="banner-container">
+  <h1>Browse All Items for Rent</h1>
+</div>
+
+<div class="container">
+  <div class="items-container">
+    <div class="filter-sort">
+      <%= form_tag(items_path, method: :get) do %>
+        <%= select_tag(:category, options_for_select(Item.distinct.pluck(:category)), include_blank: 'All Categories', class: 'filter-select') %>
+        <%= select_tag(:sort, options_for_select({ 'Price Ascending' => 'price_asc', 'Price Descending' => 'price_desc' }), include_blank: 'Sort By', class: 'filter-select') %>
+        <%= submit_tag('Filter and Sort', class: 'filter-button') %>
+      <% end %>
+    </div>
+
+    <div class="image-grid-container">
+      <% @items.each do |item| %>
+        <div class="item">
+          <%= image_tag("dress.png", alt: "text", height: 200, class: "item-image") %>
+          <div class="item-details">
+            <h2 class="item-title"><%= item.title %></h2>
+            <p class="item-price"><%= item.price %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

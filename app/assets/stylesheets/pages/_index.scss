@@ -1,2 +1,62 @@
+.banner-container {
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+
+.banner {
+  background-color: #F6A785;
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.items-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filter-sort {
+  margin-bottom: 20px;
+}
+
+.filter-select {
+  /* Add styles for the filter select elements */
+}
+
+.filter-button {
+  /* Add styles for the filter button */
+}
+
+.image-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: calc(25% - 20px);
+  margin-bottom: 20px;
+}
+
+.item-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.item-details {
+  text-align: center;
+}
+
+.item-title {
+  /* Add styles for item title */
+}
+
+.item-price {
+  /* Add styles for item price */
+}
