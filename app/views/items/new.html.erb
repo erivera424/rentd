@@ -5,8 +5,8 @@
 <div class="container p-2 m-10">
 
   <div class="card">
-    <h3 class="center_text">Add pictures of your item</h3>
-    <p>We recommend capturing the item only in a flat-lay position, taken from directly above the item.</p>
+    <h3 class="center-text">Add pictures of your item</h3>
+    <p class="center-text">We recommend capturing the item only in a flat-lay position, taken from directly above the item.</p>
     <! -- add photo functionality -->
     <div class="container p-10 m-2">
       <div class="icon"></div>
@@ -15,7 +15,7 @@
   </div>
 
   <div class="card">
-    <h3 class="center_text">Add pictures of your item</h3>
+    <h3 class="center-text">Add pictures of your item</h3>
       <%= simple_form_for(@item) do |f| %>
         <%= f.input :title %>
         <%= f.input :description %>
@@ -27,4 +27,8 @@
         <%= f.submit %>
       <% end %>
    </div>
+</div>
+
+<div>
+  
 </div>
