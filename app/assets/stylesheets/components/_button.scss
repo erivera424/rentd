@@ -5,40 +5,48 @@
   color: black;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .orange-button {
   padding: 12px 0;
   width: 100%;
   font-size: 18px;
-  background-color: #F6A785;
+  background-color: $primary-color;
   color: white;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .yellow-button {
   padding: 12px 0;
   width: 100%;
   font-size: 18px;
-  background-color: #FAE694;
-  color: white;
+  background-color: $yellow;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 10px;
   cursor: pointer;
 }
 
-
-.rent-button {
+.grey-button {
   padding: 12px 0;
-  width: 200px;
+  width: 100%;
   font-size: 18px;
-  margin-bottom: 20px;
-  background-color: #FAE694;
-  color: black;
+  background-color: $grey;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  text-decoration: none;
+}
+
+.button-browse {
+  padding: 12px 16px;
+  font-size: 14px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
 }
