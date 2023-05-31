@@ -13,6 +13,11 @@ class ItemsController < ApplicationController
     elsif params[:sort] == 'price_desc'
       @items = @items.order(price: :desc)
     end
+
+    # Categorize items for the view
+    @dresses = @items.where(category: 'dresses')
+    @tops = @items.where(category: 'tops')
+    @bottoms = @items.where(category: 'bottoms')
   end
 
   def show
