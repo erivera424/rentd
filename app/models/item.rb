@@ -1,10 +1,9 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_many :bookings
-  validates :title, uniqueness: true
 
-  # # Add the name attribute
-  # def name
-  #   title
-  # end
+  CATEGORIES = ['dresses', 'tops', 'bottoms']
+
+  validates :title, uniqueness: true
+  validates :category, inclusion: { in: CATEGORIES }
 end

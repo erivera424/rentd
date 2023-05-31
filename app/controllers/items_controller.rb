@@ -13,6 +13,11 @@ class ItemsController < ApplicationController
     elsif params[:sort] == 'price_desc'
       @items = @items.order(price: :desc)
     end
+
+    # Categorize items for the view
+    @dresses = @items.where(category: 'dresses')
+    @tops = @items.where(category: 'tops')
+    @bottoms = @items.where(category: 'bottoms')
   end
 
   def show
@@ -25,7 +30,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @list.save
+
     if @item.save
       redirect_to item_path(@item), notice: "Item was successfully created."
     else
@@ -36,6 +41,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, :brand, :fabric_details, :original_price, :size )
+    params.require(:item).permit(:title, :description, :price, :brand, :fabric_details, :original_price, :size)
   end
 end
