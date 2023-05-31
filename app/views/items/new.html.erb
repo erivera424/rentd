@@ -9,6 +9,7 @@
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.input :title %>
     <%= f.input :description %>
+    <%= f.input :category, collection: Item::CATEGORIES %>
     <%= f.input :brand %>
     <%= f.input :fabric_details %>
     <%= f.input :size %>
