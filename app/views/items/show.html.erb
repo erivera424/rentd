@@ -1,5 +1,8 @@
+<div class="top-bar">
+  <h1 class="center-text">Item Specs</h1>
+</div>
+
 <div class="show-container">
-  <h1>Items Specs</h1>
   <div class="carousel-spacing">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -29,7 +32,7 @@
     </div>
   </div>
 
-  <%= link_to "RENT", "#" %>
+  <%= link_to "RENT", "#", class: "rent-button" %>
   <h2><%= @item.title %></h2>
 
   <h3>Price</h3>
