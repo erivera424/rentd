@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
-    before_save :upload_image
     if @item.save
       redirect_to item_path(@item), notice: "Item was successfully created."
     else
