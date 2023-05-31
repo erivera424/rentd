@@ -1,4 +1,9 @@
-.bottom_navbar {
+.navbar {
   justify-content: space-between;
-  background: black;
+  overflow: hidden;
+  background:#F6A785;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
 }
