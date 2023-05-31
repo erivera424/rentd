@@ -1,3 +1,7 @@
+// Import page-specific CSS files here.
+@import "home";
+@import "show";
+
 body, html {
   margin: 0;
   padding: 0;
@@ -54,6 +58,7 @@ body, html {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .filter-select {
   background-color: #FAE694;
   font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
@@ -67,6 +72,9 @@ body, html {
 }
 
 .card-grid-container {
+=======
+.image-grid-container {
+>>>>>>> master
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -94,6 +102,7 @@ body, html {
   font-size: 16px;
   text-align: center;
 }
+<<<<<<< HEAD
 
 .card-price {
   font-size: 16px;
@@ -106,3 +115,5 @@ body, html {
     margin-bottom: 20px;
   }
 }
+=======
+>>>>>>> master

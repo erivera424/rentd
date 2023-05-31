@@ -1,13 +1,25 @@
 <div class="container home">
   <div class="buttons">
-    <button class="button">sign up</button>
-    <button class="button">log in</button>
+    <%= link_to "sign up", new_user_registration_path, class: "button" %>
+    <%= link_to "sign in", new_user_session_path, class: "button" %>
   </div>
-  <h1>Fashion with a purpose: Rent, Reuse, and make a Sustainable Statement!</h1>
-  <p></p>
 
-  <h1>hello rentd</h1>
+  <div class="position-reltive">
+    <h1>Fashion with a purpose: <span class="text-orange">Rent, Reuse</span>, and make a Sustainable Statement!</h1>
+    <div class="green-logo">
+      <%= image_tag "greenlogo1.png", width: 200 %>
+    </div>
+  </div>
 
-  <button class="orange-button">Get started</button>
-  <%= image_tag "logo.png", width: 200 %>
+  <%= link_to "Get started", items_path, class: "orange-button" %>
+
+  <div>
+    <button class="button-browse">browse</button>
+    <div class="images">
+      <%= image_tag "dress.png" %>
+      <%= image_tag "dress.png" %>
+      <%= image_tag "dress.png" %>
+    </div>
+  </div>
+  <%= image_tag "logo2.png", width: 200 %>
 </div>
