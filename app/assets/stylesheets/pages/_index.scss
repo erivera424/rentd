@@ -1,7 +1,3 @@
-// Import page-specific CSS files here.
-@import "home";
-@import "show";
-
 body, html {
   margin: 0;
   padding: 0;
@@ -9,7 +5,7 @@ body, html {
 
 .banner-container {
   background-color: #F6A785;
-  padding: 20px;
+  padding: 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -25,6 +21,86 @@ body, html {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+.banner-container h2 {
+  font-family: $headers-font;
+  font-size: 15px;
+  margin-top: 10px;
+  display: block;
+}
+
+.logo-image {
+  max-width: 150px;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.items-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filter-sort {
+  margin-bottom: 20px;
+}
+
+.filter-select {
+  background-color: #FAE694;
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  font-size: 14px;
+}
+
+.filter-button {
+  background-color: #FAE694;
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  font-size: 14px;
+}
+
+.card-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-details {
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 16px;
+  text-align: center;
+}
+
+.card-price {
+  font-size: 16px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+  }
+}
+
 
 .banner-container h2 {
   font-family: $headers-font;
@@ -58,7 +134,6 @@ body, html {
   margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
 .filter-select {
   background-color: #FAE694;
   font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
@@ -71,10 +146,7 @@ body, html {
   font-size: 14px;
 }
 
-.card-grid-container {
-=======
 .image-grid-container {
->>>>>>> master
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -102,7 +174,6 @@ body, html {
   font-size: 16px;
   text-align: center;
 }
-<<<<<<< HEAD
 
 .card-price {
   font-size: 16px;
@@ -115,5 +186,3 @@ body, html {
     margin-bottom: 20px;
   }
 }
-=======
->>>>>>> master

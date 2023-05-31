@@ -1,9 +1,9 @@
 .banner-container {
   background-color: #F6A785;
-  padding: 60px;
+  padding: 20px;
   text-align: center;
   display: flex;
-  flex-direction: column; /* Added */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 0;
@@ -20,24 +20,5 @@
 .banner-container h2 {
   font-family: $headers-font;
   font-size: 15px;
-  margin-top: 10px;
-  display: block; /* Added */
-  background-color: $primary-color;
-  padding: 25px;
-  padding-bottom: 25px;
-  text-align: center;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  display: block;
 }
-
-
-
-
-
-
-
-
-
-
-$body-font: "Nunito", "Helvetica", "sans-serif";
-$headers-font: 'Montserrat', 'sans-serif';
