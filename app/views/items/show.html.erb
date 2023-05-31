@@ -15,7 +15,7 @@
           <% if @item.photos.attached? %>
             <%= cl_image_tag @item.photos.first.key, class: "d-block w-100 carousel-img" %>
           <% else %>
-            <%= image_tag("dresses#{(i)%8 + 1}.png", alt: "Dress", class: "d-block w-100 carousel-img") %>
+            <%= image_tag("dresses#{(@item.id)%8 + 1}.png", alt: "Dress", class: "d-block w-100 carousel-img") %>
           <% end %>
         </div>
         <div class="carousel-item">

@@ -3,7 +3,7 @@
   <h1 class="center-text">List an item for rent</h1>
 </div>
 
-<div class="container">
+<div class="container my-5">
   <h3 class="center-text">Add product details</h3>
   <%= simple_form_for(@item) do |f| %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
