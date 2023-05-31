@@ -16,16 +16,15 @@
   <h1>Dresses</h1>
   <div class="items-container">
     <div class="card-grid-container">
-      <% (1..8).each do |i| %>
-        <div class="card">
-          <%= image_tag("dresses#{i}.png", alt: "Dress", height: 200, class: "card-image") %>
-          <div class="card-details">
-            <h2 class="card-title"><%= "Dress #{i}" %></h2>
-            <p class="card-price"><%= number_to_currency(99.99) %></p>
+      <% @dresses.each_with_index do |dress, i| %>
+        <%= link_to item_path(dress) do %>
+          <div class="card">
+            <%= image_tag("dresses#{(i)%8 + 1}.png", alt: "Dress", height: 200, class: "card-image") %>
+            <div class="card-details">
+              <h2 class="card-title"><%= dress.title %></h2>
+              <p class="card-price"><%= number_to_currency(dress.price) %></p>
+            </div>
           </div>
-        </div>
-        <% if (i % 4 == 0) %>
-          </div><div class="card-grid-container">
         <% end %>
       <% end %>
     </div>
@@ -34,16 +33,15 @@
   <h1>Tops</h1>
   <div class="items-container">
     <div class="card-grid-container">
-      <% (1..8).each do |i| %>
-        <div class="card">
-          <%= image_tag("tops#{i}.png", alt: "Tops", height: 200, class: "card-image") %>
-          <div class="card-details">
-            <h2 class="card-title"><%= "Tops #{i}" %></h2>
-            <p class="card-price"><%= number_to_currency(99.99) %></p>
+      <% @tops.each_with_index do |top, i| %>
+        <%= link_to item_path(top) do %>
+          <div class="card">
+            <%= image_tag("tops#{(i)%8 + 1}.png", alt: "Tops", height: 200, class: "card-image") %>
+            <div class="card-details">
+              <h2 class="card-title"><%= top.title %></h2>
+              <p class="card-price"><%= number_to_currency(top.price) %></p>
+            </div>
           </div>
-        </div>
-        <% if (i % 4 == 0) %>
-          </div><div class="card-grid-container">
         <% end %>
       <% end %>
     </div>
@@ -52,17 +50,17 @@
   <h1>Bottoms</h1>
   <div class="items-container">
     <div class="card-grid-container">
-      <% (1..8).each do |i| %>
-        <div class="card">
-          <%= image_tag("bottoms#{i}.png", alt: "Bottoms", height: 200, class: "card-image") %>
-          <div class="card-details">
-            <h2 class="card-title"><%= "Bottoms #{i}" %></h2>
-            <p class="card-price"><%= number_to_currency(99.99) %></p>
+      <% @bottoms.each_with_index do |bottom, i| %>
+        <%= link_to item_path(bottom) do %>
+          <div class="card">
+            <%= image_tag("bottoms#{(i)%8 + 1}.png", alt: "Bottoms", height: 200, class: "card-image") %>
+            <div class="card-details">
+              <h2 class="card-title"><%= bottom.title %></h2>
+              <p class="card-price"><%= number_to_currency(bottom.price) %></p>
+            </div>
           </div>
-        </div>
-        <% if (i % 4 == 0) %>
-          </div><div class="card-grid-container">
         <% end %>
       <% end %>
     </div>
   </div>
+</div>

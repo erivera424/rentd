@@ -1,8 +1,20 @@
-.bottom-navbar {
+.navbar {
   justify-content: space-between;
-  background: black;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  height: 80px;
+  background:#F6A785;
+  // border-bottom-left-radius: 10px;
+  // border-bottom-right-radius: 10px;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  // height: 80px;
   padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.user-picture {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
