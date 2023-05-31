@@ -25,7 +25,8 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @list.save
+    @item.user_id = current_user.id
+    before_save :upload_image
     if @item.save
       redirect_to item_path(@item), notice: "Item was successfully created."
     else
@@ -33,9 +34,16 @@ class ItemsController < ApplicationController
     end
   end
 
+  def upload_image
+    result = Cloudinary::Uploader.upload("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg", public_id: "olympic_flag")
+      # Process the result or handle any error conditions here
+      # ...
+  end
+
+
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, :brand, :fabric_details, :original_price, :size )
+    params.require(:item).permit(:title, :description, :price, :brand, :fabric_details, :original_price, :size, photos: [])
   end
 end
