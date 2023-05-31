@@ -11,3 +11,31 @@
 .buttons {
   align-self: end;
 }
+
+.green-logo {
+  position: absolute;
+  top: 40px;
+  left: -40px;
+  z-index: -1;
+}
+
+.button-browse {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.text-orange {
+  color: $primary-color;
+}
