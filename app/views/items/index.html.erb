@@ -19,7 +19,11 @@
       <% @dresses.each_with_index do |dress, i| %>
         <%= link_to item_path(dress) do %>
           <div class="card">
-            <%= image_tag("dresses#{(i)%8 + 1}.png", alt: "Dress", height: 200, class: "card-image") %>
+            <% if dress.photos.attached? %>
+              <%= cl_image_tag dress.photos.first.key, height: 200, class: "card-image" %>
+            <% else %>
+              <%= image_tag("dresses#{(i)%8 + 1}.png", alt: "Dress", height: 200, class: "card-image") %>
+            <% end %>
             <div class="card-details">
               <h2 class="card-title"><%= dress.title %></h2>
               <p class="card-price"><%= number_to_currency(dress.price) %></p>
