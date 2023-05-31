@@ -1,12 +1,37 @@
-// Import page-specific CSS files here.
-@import "home";
-@import "show";
+body, html {
+  margin: 0;
+  padding: 0;
+}
 
-.banner {
+.banner-container {
   background-color: #F6A785;
-  padding: 20px;
-  padding-bottom: 40px;
+  padding: 40px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.banner-container h1 {
+  font-family: $headers-font;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner-container h2 {
+  font-family: $headers-font;
+  font-size: 15px;
+  margin-top: 10px;
+  display: block;
+}
+
+.logo-image {
+  max-width: 150px;
+  height: auto;
 }
 
 .container {
@@ -23,23 +48,141 @@
   margin-bottom: 20px;
 }
 
+.filter-select {
+  background-color: #FAE694;
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  font-size: 14px;
+}
+
+.filter-button {
+  background-color: #FAE694;
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  font-size: 14px;
+}
+
+.card-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-details {
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 16px;
+  text-align: center;
+}
+
+.card-price {
+  font-size: 16px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+  }
+}
+
+
+.banner-container h2 {
+  font-family: $headers-font;
+  font-size: 15px;
+  display: block;
+}
+
+.container h1 {
+  font-family: $headers-font;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  max-width: 200px;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.items-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filter-sort {
+  margin-bottom: 20px;
+}
+
+.filter-select {
+  background-color: #FAE694;
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  font-size: 14px;
+}
+
+.filter-button {
+  background-color: #FAE694;
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  font-size: 14px;
+}
+
 .image-grid-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.item {
-  width: calc(25% - 20px);
-  margin-bottom: 20px;
+.card {
+  width: calc(50% - 10px);
+  margin-bottom: 10px;
 }
 
-.item-image {
+.card-image {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.item-details {
+.card-details {
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 16px;
   text-align: center;
+}
+
+.card-price {
+  font-size: 16px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+  }
 }

@@ -1,27 +1,68 @@
 <div class="banner-container">
-  <h1>Browse All Items for Rent</h1>
+  <%= image_tag("logo.png", alt: "Logo", class: "logo-image") %>
+  <h1>Browse Items for Rent</h1>
+  <h2>Unlock Your Style, Rent with Confidence</h2>
 </div>
 
 <div class="container">
-  <div class="items-container">
-    <div class="filter-sort">
-      <%= form_tag(items_path, method: :get) do %>
-        <%= select_tag(:category, options_for_select(Item.distinct.pluck(:category)), include_blank: 'All Categories', class: 'filter-select') %>
-        <%= select_tag(:sort, options_for_select({ 'Price Ascending' => 'price_asc', 'Price Descending' => 'price_desc' }), include_blank: 'Sort By', class: 'filter-select') %>
-        <%= submit_tag('Filter and Sort', class: 'filter-button') %>
-      <% end %>
-    </div>
+  <div class="filter-sort">
+    <%= form_tag(items_path, method: :get) do %>
+      <%= select_tag(:category, options_for_select(Item.distinct.pluck(:category)), include_blank: 'All Categories', class: 'filter-select') %>
+      <%= select_tag(:sort, options_for_select({ 'Price Ascending' => 'price_asc', 'Price Descending' => 'price_desc' }), include_blank: 'Sort By', class: 'filter-select') %>
+      <%= submit_tag 'Filter', class: 'filter-button' %>
+    <% end %>
+  </div>
 
-    <div class="image-grid-container">
-      <% @items.each do |item| %>
-        <div class="item">
-          <%= image_tag("dress.png", alt: "text", height: 200, class: "item-image") %>
-          <div class="item-details">
-            <h2 class="item-title"><%= item.title %></h2>
-            <p class="item-price"><%= item.price %></p>
+  <h1>Dresses</h1>
+  <div class="items-container">
+    <div class="card-grid-container">
+      <% (1..8).each do |i| %>
+        <div class="card">
+          <%= image_tag("dresses#{i}.png", alt: "Dress", height: 200, class: "card-image") %>
+          <div class="card-details">
+            <h2 class="card-title"><%= "Dress #{i}" %></h2>
+            <p class="card-price"><%= number_to_currency(99.99) %></p>
           </div>
         </div>
+        <% if (i % 4 == 0) %>
+          </div><div class="card-grid-container">
+        <% end %>
       <% end %>
     </div>
   </div>
-</div>
+
+  <h1>Tops</h1>
+  <div class="items-container">
+    <div class="card-grid-container">
+      <% (1..8).each do |i| %>
+        <div class="card">
+          <%= image_tag("tops#{i}.png", alt: "Tops", height: 200, class: "card-image") %>
+          <div class="card-details">
+            <h2 class="card-title"><%= "Tops #{i}" %></h2>
+            <p class="card-price"><%= number_to_currency(99.99) %></p>
+          </div>
+        </div>
+        <% if (i % 4 == 0) %>
+          </div><div class="card-grid-container">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <h1>Bottoms</h1>
+  <div class="items-container">
+    <div class="card-grid-container">
+      <% (1..8).each do |i| %>
+        <div class="card">
+          <%= image_tag("bottoms#{i}.png", alt: "Bottoms", height: 200, class: "card-image") %>
+          <div class="card-details">
+            <h2 class="card-title"><%= "Bottoms #{i}" %></h2>
+            <p class="card-price"><%= number_to_currency(99.99) %></p>
+          </div>
+        </div>
+        <% if (i % 4 == 0) %>
+          </div><div class="card-grid-container">
+        <% end %>
+      <% end %>
+    </div>
+  </div>

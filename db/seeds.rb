@@ -22,5 +22,10 @@ require 'faker'
     price: Faker::Commerce.price(range: 10.0..100.0),
     user: user
   )
+
+  # Assign categories manually
+  categories = ['dresses', 'tops', 'bottoms']
+  item.category = categories.sample
+
   item.save!
 end
