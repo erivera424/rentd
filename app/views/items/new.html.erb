@@ -2,26 +2,17 @@
   <h1 class="center-text">List an item for rent</h1>
 </div>
 
-<div class="container p-2 m-10">
-  <div class="card">
-    <h3 class="center-text">Add pictures of your item</h3>
-    <p class="center-text">We recommend capturing the item only in a flat-lay position, taken from directly above the item.</p>
-<! -- add photo functionality -->
-    <div id="camera">
-      <%= image_tag("camera.png") %>
-    </div>
-  </div>
-
-  <div class="card">
+  <div class="card p-100 m-50">
     <h3 class="center-text">Add product details</h3>
       <%= simple_form_for(@item) do |f| %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.input :title %>
         <%= f.input :description %>
         <%= f.input :brand %>
         <%= f.input :fabric_details %>
         <%= f.input :size %>
-        <%= f.input :original_price %>
-        <%= f.input :price %>
+        <%= f.input :original_price, label: 'Original price in $' %>
+        <%= f.input :price, label: 'Daily rental price in $' %>
         <%= f.button :submit, 'Save', class: 'yellow-button' %>
       <% end %>
    </div>

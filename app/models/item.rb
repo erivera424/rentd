@@ -7,4 +7,5 @@ class Item < ApplicationRecord
 
   validates :title, uniqueness: true
   validates :category, inclusion: { in: CATEGORIES }
+  has_many_attached :photos
 end
