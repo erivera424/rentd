@@ -73,3 +73,22 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+.rent-button {
+  padding: 12px 0;
+  width: 200px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background-color: $yellow;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 1s; /* Transition duration of 1 second */
+}
+
+.rent-button:hover {
+  background-color: $primary-color;
+  color: rgb(0, 0, 0);
+}
