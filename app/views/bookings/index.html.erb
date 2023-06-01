@@ -1,0 +1,16 @@
+<div class="banner-container">
+  <%= image_tag("logo.png", alt: "Logo", class: "logo-image") %>
+  <h1>Your Booking</h1>
+</div>
+
+<div class="booking-container">
+  <div class="grey-button2">
+    Bookings
+  </div>
+
+  <div class="card">
+    <% @bookings.each do |booking| %>
+      <p><%= booking.item.title %></p>
+    <% end %>
+  </div>
+</div>
