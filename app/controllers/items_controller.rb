@@ -2,6 +2,13 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
 
+    # Search results
+    if params[:query].present?
+      @items = Item.search_by_five_columns(params[:query])
+    else
+      @items = Item.all
+    end
+
     # Additional logic for filtering
     if params[:category].present?
       @items = @items.where(category: params[:category])
