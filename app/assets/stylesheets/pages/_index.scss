@@ -68,7 +68,7 @@ body, html {
 .filter-button {
   padding: 12px 0;
   font-size: 14px;
-  background-color: #FAE694;
+  background-color: $primary-color;
   color: #000000;
   border: none;
   border-radius: 10px;
@@ -80,7 +80,7 @@ body, html {
 }
 
 .filter-button:hover {
-  background-color: $primary-color;
+  background-color: $yellow;
 }
 
 .filter-sort {
