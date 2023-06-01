@@ -57,6 +57,26 @@ body, html {
   margin-top: 0;
 }
 
+.items-container h1 {
+  font-family: $headers-font;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filter-button {
+  padding: 12px 0;
+  font-size: 14px;
+  background-color: #FAE694;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 1s;
+  display: inline-block;
+  width: 100px;
+}
+
 .filter-sort {
   margin-bottom: 20px;
 }
@@ -64,17 +84,16 @@ body, html {
 .filter-select {
   background-color: #FAE694;
   font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  padding: 12px 0;
   font-size: 14px;
-}
-
-.filter-button {
-  background-color: #FAE694;
-  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
-  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  display: inline-block;
 }
 
 .button-container {
   text-align: left;
+  font-size: 0px;
 }
 
 .card-grid-container {
@@ -110,7 +129,6 @@ body, html {
   object-fit: cover;
   object-position: center;
 }
-
 
 .card-details {
   font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
