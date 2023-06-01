@@ -73,3 +73,19 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+.grey-button2 {
+  padding: 12px 0;
+  width: 150px;
+  font-size: 10px;
+  background-color: $grey;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 1s; /* Transition duration of 1 second */
+}
+
+.grey-button2:hover {
+  background-color: $yellow;
+}
