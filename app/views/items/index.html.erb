@@ -23,7 +23,7 @@
       <%= submit_tag 'Filter', class: 'filter-button' %>
     <% end %>
   </div>
-
+  
   <% if @items.any? %>
     <div class="items-container">
       <h1>Dresses</h1>
@@ -43,7 +43,7 @@
         <% end %>
       </div>
     </div>
-
+    
     <div class="items-container">
     <h1>Tops</h1>
       <div class="card-grid-container">
@@ -60,7 +60,7 @@
         <% end %>
       </div>
     </div>
-
+   
     <div class="items-container">
     <h1>Bottoms</h1>
       <div class="card-grid-container">
@@ -77,7 +77,8 @@
         <% end %>
       </div>
     </div>
-  <% else %>
+  
+    <% else %>
     <em>Sorry, nothing matches your search.</em>
   <% end %>
 </div>
