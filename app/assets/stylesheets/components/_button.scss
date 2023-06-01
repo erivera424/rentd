@@ -97,18 +97,20 @@
   transition: color .5s;
 }
 
-.grey-button2 {
+.rent-button {
   padding: 12px 0;
-  width: 150px;
-  font-size: 10px;
-  background-color: $grey;
+  width: 200px;
+  font-size: 18px;
+  background-color: $yellow;
   color: rgb(0, 0, 0);
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  text-decoration: none;
   transition: background-color 1s; /* Transition duration of 1 second */
 }
 
-.grey-button2:hover {
-  background-color: $yellow;
+.rent-button:hover {
+  background-color: $primary-color;
+  color: rgb(0, 0, 0);
 }
