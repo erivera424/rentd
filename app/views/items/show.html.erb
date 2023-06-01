@@ -1,8 +1,12 @@
+<div class="container my-3">
+  <%= link_to "Go Back", items_path, class: "button" %>
+</div>
+
 <div class="top-bar">
   <h1 class="center-text">Item Specs</h1>
 </div>
 
-<div class="show-container">
+<div class="container show-container">
   <div class="carousel-spacing">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -32,7 +36,7 @@
     </div>
   </div>
 
-  <%= link_to "RENT", "#", class: "rent-button" %>
+  <%= link_to "RENT", new_item_booking_path(@item), class: "rent-button" %>
   <h2><%= @item.title %></h2>
 
   <h3>Daily rental price</h3>
