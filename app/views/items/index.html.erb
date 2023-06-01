@@ -4,6 +4,10 @@
   <h2>Unlock Your Style, Rent with Confidence</h2>
 </div>
 
+<div class="button-container">
+  <%= link_to "Go Back", root_path, class: "back-button" %>
+</div>
+
 <div class="container">
   <div class="filter-sort">
     <%= form_tag(items_path, method: :get) do %>
@@ -13,8 +17,8 @@
     <% end %>
   </div>
 
-  <h1>Dresses</h1>
   <div class="items-container">
+    <h1>Dresses</h1>
     <div class="card-grid-container">
       <% @dresses.each_with_index do |dress, i| %>
         <%= link_to item_path(dress) do %>
@@ -34,8 +38,8 @@
     </div>
   </div>
 
-  <h1>Tops</h1>
   <div class="items-container">
+  <h1>Tops</h1>
     <div class="card-grid-container">
       <% @tops.each_with_index do |top, i| %>
         <%= link_to item_path(top) do %>
@@ -51,8 +55,8 @@
     </div>
   </div>
 
-  <h1>Bottoms</h1>
   <div class="items-container">
+  <h1>Bottoms</h1>
     <div class="card-grid-container">
       <% @bottoms.each_with_index do |bottom, i| %>
         <%= link_to item_path(bottom) do %>

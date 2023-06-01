@@ -39,13 +39,12 @@ body, html {
 }
 
 .logo-image {
-  max-width: 90px;
+  max-width: 150px;
   height: auto;
   position: absolute;
   top: -30px;
-  left: 10px;
+  left: -20px;
 }
-
 
 .container {
   max-width: 1200px;
@@ -55,6 +54,27 @@ body, html {
 .items-container {
   width: 100%;
   margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.items-container h1 {
+  font-family: $headers-font;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filter-button {
+  padding: 12px 0;
+  font-size: 14px;
+  background-color: #FAE694;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 1s;
+  display: inline-block;
+  width: 100px;
 }
 
 .filter-sort {
@@ -64,13 +84,16 @@ body, html {
 .filter-select {
   background-color: #FAE694;
   font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  padding: 12px 0;
   font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-.filter-button {
-  background-color: #FAE694;
-  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
-  font-size: 14px;
+.button-container {
+  text-align: left;
+  font-size: 0px;
 }
 
 .card-grid-container {
@@ -83,12 +106,28 @@ body, html {
   height: 100%;
   margin-bottom: 10px;
   padding: 0px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .card-grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .card-image {
   width: 100%;
   height: auto;
   object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card-details {
@@ -106,11 +145,4 @@ body, html {
 .card-price {
   font-size: 16px;
   text-align: center;
-}
-
-@media (min-width: 768px) {
-  .card {
-    width: calc(25% - 20px);
-    margin-bottom: 20px;
-  }
 }
