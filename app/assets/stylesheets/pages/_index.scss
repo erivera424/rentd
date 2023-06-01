@@ -17,6 +17,7 @@ body, html {
   margin-top: 0;
   margin-bottom: 10px;
   height: 150px;
+  border-radius: 0 0 10px 10px;
   position: relative;
 }
 
@@ -75,6 +76,11 @@ body, html {
   transition: background-color 1s;
   display: inline-block;
   width: 100px;
+  transition: background-color 1s; /* Transition duration of 1 second */
+}
+
+.filter-button:hover {
+  background-color: $primary-color;
 }
 
 .filter-sort {
@@ -133,8 +139,17 @@ body, html {
 .card-details {
   font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
   margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
+  margin-top: 10px;
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card-details:hover {
+  color: $primary-color;
+  transition: color .5s;
 }
 
 .card-title {

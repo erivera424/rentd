@@ -21,12 +21,10 @@
     <h1>Dresses</h1>
     <div class="card-grid-container">
       <% @dresses.each_with_index do |dress, i| %>
-        <%= link_to item_path(dress) do %>
+        <%= link_to item_path(dress), class: "text-decoration-none" do %>
           <div class="card">
             <% if dress.photos.attached? %>
               <%= cl_image_tag dress.photos.first.key, height: 200, class: "card-image" %>
-            <% else %>
-              <%= image_tag("dresses#{(i)%8 + 1}.png", alt: "Dress", height: 200, class: "card-image") %>
             <% end %>
             <div class="card-details">
               <h2 class="card-title"><%= dress.title %></h2>
@@ -42,7 +40,7 @@
   <h1>Tops</h1>
     <div class="card-grid-container">
       <% @tops.each_with_index do |top, i| %>
-        <%= link_to item_path(top) do %>
+        <%= link_to item_path(top), class: "text-decoration-none" do %>
           <div class="card">
             <%= image_tag("tops#{(i)%8 + 1}.png", alt: "Tops", height: 200, class: "card-image") %>
             <div class="card-details">
@@ -59,7 +57,7 @@
   <h1>Bottoms</h1>
     <div class="card-grid-container">
       <% @bottoms.each_with_index do |bottom, i| %>
-        <%= link_to item_path(bottom) do %>
+        <%= link_to item_path(bottom), class: "text-decoration-none" do %>
           <div class="card">
             <%= image_tag("bottoms#{(i)%8 + 1}.png", alt: "Bottoms", height: 200, class: "card-image") %>
             <div class="card-details">
