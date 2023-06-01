@@ -3,14 +3,21 @@
   <h1>Your Booking</h1>
 </div>
 
-<div class="booking-container">
+<div class="booking-container my-5">
   <div class="grey-button2">
     Bookings
   </div>
 
-  <div class="card">
-    <% @bookings.each do |booking| %>
+<div class="container show-container">
+  <% @bookings.each do |booking| %>
+    <div class="card">
+    <div class="card-image">
+      <%= cl_image_tag booking.item.photos.first.key, height: 200, class: "card-image" %>
       <p><%= booking.item.title %></p>
+      <p><%= booking.status %></p>
+      <%= link_to "Accept", "#" %>
+      <%= link_to "Decline", "#" %>
+    </div>
     <% end %>
   </div>
 </div>
