@@ -6,24 +6,19 @@
   text-align: center;
   justify-content: space-between;
   align-items: center;
+  margin: 10px;
 }
 
 .buttons {
   align-self: end;
+  margin-top: 10px;
 }
 
 .green-logo {
   position: absolute;
-  top: 40px;
-  left: -40px;
+  top: 10px;
+  left: -60px;
   z-index: -1;
-}
-
-.button-browse {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: end;
 }
 
 .images {
