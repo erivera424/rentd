@@ -8,33 +8,49 @@
 
 require 'faker'
 
+puts "Cleaning items.."
+Item.destroy_all
+User.destroy_all
+
+puts "Creating items..."
 # Create 10 items with a Faker-generated user
-10.times do
-  user = User.new(
-    email: Faker::Internet.email,
-    password: Faker::Internet.password
-  )
-  user.save!
 
-  item = Item.new(
-    title: Faker::Commerce.product_name,
-    description: Faker::Lorem.sentence,
-    brand: Faker::FunnyName.name,
-    size: Faker::Number,
-    original_price: Faker::Commerce.price(range: 100.0..500.0),
-    price: Faker::Commerce.price(range: 10.0..100.0),
-    user: user
-  )
+user = User.new(
+  email: "test@gmail.com",
+  password: "123456"
+)
+user.save!
 
-  file = File.open(Rails.root.join("app/assets/images/bottoms1.png"))
-  item.photos.attach(io: file, filename: 'image.png', content_type: 'image/png')
+categories = ['dresses', 'tops', 'bottoms']
 
-  # Assign categories manually
-  categories = ['dresses', 'tops', 'bottoms']
-  item.category = categories.sample
+categories.each do |category|
+  8.times do |num|
+    user = User.new(
+      email: Faker::Internet.email,
+      password: Faker::Internet.password
+    )
+    user.save!
 
-  fabric_details = ['Cotton', 'Linen', 'Satin', 'Wool', 'Silk']
-  item.fabric_details = fabric_details.sample
+    item = Item.new(
+      title: Faker::Commerce.product_name,
+      description: Faker::Lorem.sentence,
+      brand: Faker::FunnyName.name,
+      size: Faker::Number,
+      original_price: Faker::Commerce.price(range: 100.0..500.0),
+      price: Faker::Commerce.price(range: 10.0..100.0),
+      user: user
+    )
 
-  item.save!
+    file = File.open(Rails.root.join("app/assets/images/#{category}#{num + 1}.png"))
+    item.photos.attach(io: file, filename: 'image.png', content_type: 'image/png')
+
+    # Assign categories manually
+    item.category = category
+
+    fabric_details = ['Cotton', 'Linen', 'Satin', 'Wool', 'Silk']
+    item.fabric_details = fabric_details.sample
+
+    item.save!
+    puts "#{item.title} created"
+  end
 end
