@@ -1,17 +1,39 @@
-    .show-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+.show-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    .carousel-spacing {
-      padding: 50px;
-    }
+.carousel-spacing {
+  padding: 50px;
+}
 
-    .product-details {
-      margin-top: 10px;
-      background-color: #ffab96;
-      padding: 24px;
-    }
+.product-details {
+  margin-top: 10px;
+  background-color: #FAE694;
+  padding: 24px;
+  margin-bottom: 60px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+
+.rent-button {
+  padding: 12px 0;
+  width: 200px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background-color: #FAE694;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.back-button {
+  // position: fixed;
+  // top: 70px;
+  // left: 70px;
+}

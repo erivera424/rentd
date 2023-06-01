@@ -1,5 +1,11 @@
 .card {
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  /* Make the form wider */
+  max-width: 500px;
 }
 
 #camera {
