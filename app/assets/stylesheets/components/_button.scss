@@ -92,6 +92,11 @@
   text-decoration: none;
 }
 
+.back-button:hover {
+  color: $primary-color;
+  transition: color .5s;
+}
+
 .grey-button2 {
   padding: 12px 0;
   width: 150px;
