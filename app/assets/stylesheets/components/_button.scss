@@ -47,7 +47,6 @@
   background-color: $primary-color;
 }
 
-
 .grey-button {
   padding: 12px 0;
   width: 100%;
@@ -95,6 +94,13 @@
 .back-button:hover {
   color: $primary-color;
   transition: color .5s;
+  
+.search-button {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 12px 0;
+  width: 100px;
+  font-size: 14px;
 }
 
 .rent-button {
@@ -102,10 +108,17 @@
   width: 200px;
   font-size: 18px;
   background-color: $yellow;
-  color: rgb(0, 0, 0);
-  border: none;
+  }
+
+.search-field {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 12px 0;
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  font-size: 14px;
+  background-color: $yellow;
+  width: 243px;
   border-radius: 10px;
-  cursor: pointer;
   text-decoration: none;
   transition: background-color 1s; /* Transition duration of 1 second */
 }

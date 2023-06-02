@@ -8,7 +8,8 @@
 
 require 'faker'
 
-puts "Cleaning items.."
+puts "Cleaning database.."
+Booking.destroy_all
 Item.destroy_all
 User.destroy_all
 
