@@ -1,20 +1,39 @@
 <div class="banner-container">
   <%= image_tag("logo.png", alt: "Logo", class: "logo-image") %>
-  <h1>Your Booking</h1>
+  <h1>Bookings</h1>
 </div>
 
 <div class="container booking-container">
+  <h2>Your bookings</h2>
   <% @bookings.each do |booking| %>
+    <div class="booking-card">
+      <div class="booking-content">
+        <div class="booking-details">
+        <%= cl_image_tag booking.item.photos.first.key, height: 200, class: "booking-image" %>
+          <p class="booking-title"><%= booking.id %></p>
+          <p class="booking-title"><%= booking.item.title %></p>
+        </div>
+        <p><%= booking.status %></p>
+      </div>
+      <div class="booking-line"></div>
+    </div>
+  <% end %>
+</div>
+
+<div class="container booking-container">
+  <h2>Your requests</h2>
+  <% @requests.each do |request| %>
     <div class="booking-card">
       <div class="booking-content">
         <button class="grey-button2">Booking Request</button>
         <div class="booking-details">
-        <%= cl_image_tag booking.item.photos.first.key, height: 200, class: "booking-image" %>
-          <p class="booking-title"><%= booking.item.title %></p>
+        <%= cl_image_tag request.item.photos.first.key, height: 200, class: "booking-image" %>
+          <p class="booking-title"><%= request.id %></p>
+          <p class="booking-title"><%= request.item.title %></p>
         </div>
-        <p><%= booking.status %></p>
-        <%= link_to "Accept", "#" %>
-        <%= link_to "Decline", "#" %>
+        <p><%= request.status %></p>
+        <%= link_to "Accept", booking_approve_path(request), data: { turbo_method: :patch } %>
+        <%= link_to "Decline", booking_decline_path(request), data: { turbo_method: :patch } %>
       </div>
       <div class="booking-line"></div>
     </div>
