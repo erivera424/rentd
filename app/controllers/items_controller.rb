@@ -27,6 +27,14 @@ class ItemsController < ApplicationController
     @dresses = @items.where(category: 'dresses')
     @tops = @items.where(category: 'tops')
     @bottoms = @items.where(category: 'bottoms')
+
+    # Determine the filtered category
+    @filtered_category = params[:category]
+
+    # Filtered category headers
+    @dresses_header = 'Dresses'
+    @tops_header = 'Tops'
+    @bottoms_header = 'Bottoms'
   end
 
   def show
@@ -46,13 +54,6 @@ class ItemsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def upload_image
-    result = Cloudinary::Uploader.upload("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg", public_id: "olympic_flag")
-      # Process the result or handle any error conditions here
-      # ...
-  end
-
 
   private
 
