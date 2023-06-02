@@ -6,45 +6,43 @@
       <%= f.input :start_date, as: :date, html5: true %>
       <%= f.input :end_date, as: :date, html5: true %>
 
-
-    <div class="container show-container">
-      <div class="carousel-spacing">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <div class="container show-container">
+        <div class="carousel-spacing">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <% if @item.photos.attached? %>
+                <% @item.photos.each_with_index do |photo, index| %>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= index %>" class="<%= "active" if index == 0 %>" aria-current="<%= "true" if index == 0 %>" aria-label="Slide <%= index + 1 %>"></button>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="carousel-inner">
+              <% if @item.photos.attached? %>
+                <% @item.photos.each_with_index do |photo, index| %>
+                  <div class="carousel-item <%= "active" if index == 0 %>">
+                    <%= cl_image_tag photo.key, class: "d-block w-100 carousel-img" %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://cdn.shopify.com/s/files/1/0293/9277/products/03-10-23Studio_KS_IM_13-35-34_30_XS1427_Black_11028_PXF_468x@2x.jpg?v=1678998574" class="d-block w-100 carousel-img" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://cdn.shopify.com/s/files/1/0293/9277/products/03-10-23Studio_KS_IM_13-35-42_30_XS1427_Black_11031_PXF_468x@2x.jpg?v=1678998574" class="d-block w-100 carousel-img" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img src="https://cdn.shopify.com/s/files/1/0293/9277/products/03-10-23Studio_KS_IM_13-36-01_30_XS1427_Black_11034_PXF_468x@2x.jpg?v=1678998574" class="d-block w-100 carousel-img" alt="...">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
       </div>
-    </div>
-      <div class="d-flex justify-content-center align-items-center">
-        <div>
-          <div class="d-flex justify-content-center align-items-center">
-            <%= f.submit 'RENT', class: "rent-button" %>
-          </div>
-          <% end %>
-          <h2><%= @item.title %></h2>
-        </div>
-    </div>
+
+      <div class="d-flex flex-column justify-content-center align-items-center mb-5">
+        <%= f.submit 'RENT', class: "rent-button" %>
+        <h2><%= @item.title %></h2>
+        <h3>Daily rental price</h3>
+        <p>$<%= @item.price %></p>
+      </div>
+    <% end %>
   </div>
 </div>
