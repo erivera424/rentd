@@ -4,9 +4,12 @@
   <h2>Unlock Your Style, Rent with Confidence</h2>
 </div>
 
-<div class="button-container">
-  <%= link_to "Go Back", root_path, class: "back-button" %>
-</div>
+<div class="container">
+  <%= form_with(url: items_path, method: :get, class: "search-form") do |f| %>
+    <%= f.search_field :query, class: "search-field", placeholder: "Search items..." %>
+    <%= f.submit "Search", class: "filter-button" %>
+  <% end %>
+ </div>
 
 <div class="container">
   <%= form_with(url: items_path, method: :get, class: "search-form") do |f| %>

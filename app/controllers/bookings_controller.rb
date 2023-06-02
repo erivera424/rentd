@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @requests = current_user.bookings # owner
+    @bookings = Booking.where(user: current_user) # customer
   end
 
   def new
@@ -18,10 +19,22 @@ class BookingsController < ApplicationController
     @booking.item_id = @item.id
 
     if @booking.save
-      redirect_to items_path
+      redirect_to bookings_path, notice: "Congrats"
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def approve
+    booking = Booking.find(params[:booking_id])
+    booking.update(status: "approved")
+    redirect_to bookings_path, notice: "You are approved"
+  end
+
+  def decline
+    booking = Booking.find(params[:booking_id])
+    booking.update(status: "declined")
+    redirect_to bookings_path, notice: "You are denied"
   end
 
   private

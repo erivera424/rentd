@@ -1,5 +1,5 @@
 <div class="container my-3">
-  <%= link_to "Go Back", items_path, class: "button" %>
+  <%= link_to "Go Back", items_path, class: "back-button" %>
 </div>
 
 <div class="top-bar">
@@ -51,4 +51,5 @@
     <p><strong>Fabric details: </strong> <%= @item.fabric_details %></p>
     <p><strong>Size: </strong> <%= @item.size %></p>
     <p><strong>Original price $: </strong> <%= @item.original_price %></p>
+    <p><strong>Owner: </strong> <%= @item.user.email %></p>
   </div>
