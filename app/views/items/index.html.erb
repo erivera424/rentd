@@ -12,6 +12,13 @@
  </div>
 
 <div class="container">
+  <%= form_with(url: items_path, method: :get, class: "search-form") do |f| %>
+    <%= f.search_field :query, class: "search-field", placeholder: "Search items..." %>
+    <%= f.submit "Search", class: "search-button" %>
+  <% end %>
+ </div>
+
+<div class="container">
   <div class="filter-sort">
     <%= form_tag(items_path, method: :get) do %>
       <%= select_tag(:category, options_for_select(Item.distinct.pluck(:category)), include_blank: 'All Categories', class: 'filter-select') %>
@@ -19,6 +26,7 @@
       <%= submit_tag 'Filter', class: 'filter-button' %>
     <% end %>
   </div>
+
 
   <% if @items.any? %>
     <div class="items-container">
@@ -39,7 +47,6 @@
         <% end %>
       </div>
     </div>
-
     <div class="items-container">
     <h1>Tops</h1>
       <div class="card-grid-container">
@@ -56,7 +63,6 @@
         <% end %>
       </div>
     </div>
-
     <div class="items-container">
     <h1>Bottoms</h1>
       <div class="card-grid-container">
@@ -73,7 +79,6 @@
         <% end %>
       </div>
     </div>
-
     <% else %>
     <em>Sorry, nothing matches your search.</em>
   <% end %>
