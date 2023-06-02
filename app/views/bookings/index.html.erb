@@ -5,16 +5,13 @@
 
 <% if @bookings.any? %>
 <div class="container booking-container">
-  <h2>Bookings of your items</h2>
-   <p>The status will update once the owner of the item has approved or declined your rental request</p>
+  <h2>Your bookings</h2>
   <% @bookings.each do |booking| %>
     <div class="booking-card">
       <div class="booking-content">
         <div class="booking-details">
         <%= cl_image_tag booking.item.photos.first.key, height: 200, class: "booking-image" %>
           <p class="booking-title"><%= booking.item.title %></p>
-          <p class="booking-title">Rental period: <%= request.start_date %> - <%= request.end_date %></p>
-          <p class="booking-title">Daily rental price: <%= request.item.price %></p>
         </div>
         <p>Status: <%= booking.status %></p>
       </div>
@@ -26,16 +23,13 @@
 
 <% if @requests.any? %>
   <div class="container booking-container">
-    <h2>Your rental requests</h2>
-    <p>Make sure you approve or decline the request as soon as possible</p>
+    <h2>Your requests</h2>
     <% @requests.each do |request| %>
       <div class="booking-card">
         <div class="booking-content">
           <div class="booking-details">
           <%= cl_image_tag request.item.photos.first.key, height: 200, class: "booking-image" %>
-            <p class="booking-title">Item: <%= request.item.title %></p>
-            <p class="booking-title">Rental period: <%= request.start_date %> - <%= request.end_date %></p>
-            <p class="booking-title">Daily rental price: <%= request.item.price %></p>
+            <p class="booking-title"><%= request.item.title %></p>
           </div>
           <p>Status: <%= request.status %></p>
           <div class="d-flex my-3">
