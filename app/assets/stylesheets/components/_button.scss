@@ -63,6 +63,24 @@
   background-color: $yellow;
 }
 
+.filter-button {
+  padding: 12px 0;
+  font-size: 14px;
+  background-color: $primary-color;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 1s;
+  display: inline-block;
+  width: 100px;
+  transition: background-color 1s; /* Transition duration of 1 second */
+}
+
+.filter-button:hover {
+    background-color: $yellow;
+  }
+
 .back-button {
   padding: 12px 16px;
   font-size: 12px;
@@ -73,20 +91,22 @@
   text-decoration: none;
 }
 
+.back-button:hover {
+  color: $primary-color;
+  transition: color .5s;
+  
 .search-button {
   margin-bottom: 20px;
   margin-top: 20px;
   padding: 12px 0;
   width: 100px;
   font-size: 14px;
-  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
 }
 
 .rent-button {
   padding: 12px 0;
   width: 200px;
   font-size: 18px;
-  margin-bottom: 20px;
   background-color: $yellow;
   }
 
