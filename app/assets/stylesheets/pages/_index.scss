@@ -65,24 +65,6 @@ body, html {
   margin-bottom: 5px;
 }
 
-.filter-button {
-  padding: 12px 0;
-  font-size: 14px;
-  background-color: $primary-color;
-  color: #000000;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 1s;
-  display: inline-block;
-  width: 100px;
-  transition: background-color 1s; /* Transition duration of 1 second */
-}
-
-.filter-button:hover {
-  background-color: $yellow;
-}
-
 .filter-sort {
   margin-bottom: 20px;
 }
