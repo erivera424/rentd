@@ -47,7 +47,6 @@
   background-color: $primary-color;
 }
 
-
 .grey-button {
   padding: 12px 0;
   width: 100%;
@@ -74,20 +73,37 @@
   text-decoration: none;
 }
 
-.grey-button2 {
+.search-button {
+  margin-bottom: 20px;
+  margin-top: 20px;
   padding: 12px 0;
-  width: 150px;
-  font-size: 12px;
-  font-weight: bold;
-  background-color: $grey;
-  color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 1s;
-  margin-bottom: 10px;
+  width: 100px;
+  font-size: 14px;
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+}
+
+.rent-button {
+  padding: 12px 0;
+  width: 200px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background-color: $yellow;
   }
 
-.grey-button2:hover {
+.search-field {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 12px 0;
+  font-family: $body-font, "Work Sans", "Helvetica", sans-serif;
+  font-size: 14px;
   background-color: $yellow;
+  width: 243px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 1s; /* Transition duration of 1 second */
+}
+
+.rent-button:hover {
+  background-color: $primary-color;
+  color: rgb(0, 0, 0);
 }
